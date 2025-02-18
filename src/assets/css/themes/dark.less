@@ -1,0 +1,33 @@
+@import '../var.less';
+
+// 暗色主题变量覆盖
+@primary-color: #177ddc;
+@text-color: rgba(255, 255, 255, 0.85);
+@text-color-secondary: rgba(255, 255, 255, 0.45);
+@heading-color: rgba(255, 255, 255, 0.85);
+@background-color-base: #141414;
+@border-color-base: #434343;
+@border-color-split: #303030;
+
+// 组件特定样式
+.dark-theme {
+  // 按钮样式
+  .button {
+    background: @background-color-base;
+    border-color: @border-color-base;
+    color: @text-color;
+  }
+
+  // 输入框样式
+  .input {
+    background: @background-color-base;
+    border-color: @border-color-base;
+    color: @text-color;
+  }
+
+  // 卡片样式
+  .card {
+    background: @background-color-base;
+    border-color: @border-color-split;
+  }
+}

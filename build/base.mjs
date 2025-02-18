@@ -115,6 +115,10 @@ const base = defineConfig({
           },
         ],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        type: 'asset',
+      },
       ...getCSSModuleRules(),
     ],
   },

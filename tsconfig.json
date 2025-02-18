@@ -9,7 +9,7 @@
     "useDefineForClassFields": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "typeRoots": ["node_modules/@types", "src/typings"],
     "types": ["node"],
@@ -38,5 +38,5 @@
       }
     ]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*"]
 }
