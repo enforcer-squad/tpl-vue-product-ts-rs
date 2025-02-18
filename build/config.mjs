@@ -54,7 +54,7 @@ const ENV = {
   },
 };
 
-const BUILD_ANALYZER = true;
+const BUILD_ANALYZER = false;
 
 const Preview_PORT = 8081;
 

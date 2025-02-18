@@ -120,6 +120,7 @@ const base = defineConfig({
   },
   plugins: [
     AutoImport({
+      dts: false,
       resolvers: [
         ArcoResolver({
           importStyle: 'css',
@@ -127,6 +128,7 @@ const base = defineConfig({
       ],
     }),
     AutoComponents({
+      dts: false,
       resolvers: [
         ArcoResolver({
           importStyle: 'css',
