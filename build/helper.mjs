@@ -76,15 +76,15 @@ const getCSSModuleRules = () => {
   };
 
   const lessRule = {
-    test: /\.global\.less$/,
-    resourceQuery: { not: [/\?vue/] },
+    test: /\.(global|vue)\.less$/,
     use: [cssLoader, lessLoader],
     include: [resolve('./src')],
     type: 'css',
   };
 
   const lessModuleRule = {
-    test: /^(?!.*\.global).*\.less$/,
+    // 后面跟的不是.global或者.vue并且以less结尾的
+    test: /^(?!.*\.(global|vue)).*\.less$/,
     resourceQuery: { not: [/\?vue/] },
     use: [cssModuleLoader, lessLoader],
     include: [resolve('./src')],

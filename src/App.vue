@@ -6,10 +6,11 @@ console.log('styles', Object.values({ a: 1 }));
 <template>
 	<div>
 		<h1>Hello world!</h1>
+		<a-button type="primary">Primary</a-button>
 	</div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .logo {
 	height: 6em;
 	padding: 1.5em;

@@ -1,4 +1,6 @@
 import { FunctionalComponent, ref } from 'vue';
+import { Button } from '@arco-design/web-vue';
+
 import styles from './index.less';
 
 export default {
@@ -26,6 +28,7 @@ export default {
           </a>
         </div>
         <h1>Rspack + Vue JSX</h1>
+        <Button type="primary">Primary</Button>
         <div class="card">
           <CounterButton onClick={add} value={count.value} />
         </div>

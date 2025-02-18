@@ -24,3 +24,4 @@ bin
 *.idea
 *.log
 *.tsbuildinfo
+components.d.ts

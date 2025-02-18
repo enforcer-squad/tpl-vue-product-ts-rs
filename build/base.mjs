@@ -77,6 +77,14 @@ const base = defineConfig({
             options: {
               sourceMap: !isProd,
               env: Polyfill,
+              rspackExperiments: {
+                import: [
+                  {
+                    libraryName: '@arco-design/web-vue',
+                    style: true,
+                  },
+                ],
+              },
             },
           },
           {
