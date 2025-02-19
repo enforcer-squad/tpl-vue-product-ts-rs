@@ -1,5 +1,7 @@
-const intl = (key, options) => {
-  const i18nKey = window.language?.[key] || key;
+import client from './client';
+
+const intl = (key: string, options?: Record<string, string | number>) => {
+  const i18nKey = window.tx_language?.[key] || key;
   if (options) {
     return Object.entries(options).reduce((result, [k, v]) => {
       const reg = new RegExp(`{{${k}}}`, 'g');
@@ -9,4 +11,4 @@ const intl = (key, options) => {
   return i18nKey;
 };
 
-export { intl };
+export { client, intl };

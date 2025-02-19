@@ -16,5 +16,10 @@ export default [
   pluginJs.configs.recommended,
   ...ts.configs.recommended,
   // ...fixupConfigRules([]),
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
   { ignores: ['dist/', 'src/**/fonts/'] },
 ];

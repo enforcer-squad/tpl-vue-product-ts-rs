@@ -1,11 +1,20 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 
-export const useTodoStore = defineStore('todo', () => {
+interface Todo {
+  id: number;
+  completed: boolean;
+  text: string;
+}
+
+type FilterType = 'all' | 'completed';
+
+let defaultId = 1;
+
+export const useAppStore = defineStore('app', () => {
   // state
-  const todos = ref([]);
-  const filter = ref('all');
-  let defaultId = 1;
+  const todos = ref<Todo[]>([]);
+  const filter = ref<FilterType>('all');
 
   // getters
   const filteredTodos = computed(() => {
@@ -16,25 +25,25 @@ export const useTodoStore = defineStore('todo', () => {
   });
 
   // actions
-  function addTodo(todo) {
+  function addTodo(todo: Omit<Todo, 'id'>) {
     todos.value.push({
       ...todo,
       id: defaultId++,
     });
   }
 
-  function removeTodo(id) {
+  function removeTodo(id: number) {
     todos.value = todos.value.filter(todo => todo.id !== id);
   }
 
-  function updateTodo(id, value) {
+  function updateTodo(id: number, value: boolean) {
     const todo = todos.value.find(todo => todo.id === id);
     if (todo) {
       todo.completed = value;
     }
   }
 
-  function toggleFilter(newFilter) {
+  function toggleFilter(newFilter: FilterType) {
     filter.value = newFilter;
   }
 
@@ -52,4 +61,4 @@ export const useTodoStore = defineStore('todo', () => {
   };
 });
 
-export const filters = ['all', 'completed'];
+export const filters: FilterType[] = ['all', 'completed'];
